@@ -130,6 +130,9 @@ function blob_fixup() {
         *)
             return 1
             ;;
+        vendor/lib64/libAncSegBaseSdk.so|vendor/lib64/libaps_frame_registration.so|vendor/lib64/libyuv2.so)
+            "${PATCHELF}" --replace-needed "libstdc++.so" "libstdc++_vendor.so" "${2}"
+            ;;
     esac
 
     return 0
