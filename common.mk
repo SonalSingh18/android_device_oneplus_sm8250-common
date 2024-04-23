@@ -367,6 +367,12 @@ PRODUCT_PACKAGES += \
     libsqlite.vendor:64 \
     libvndfwk_detect_jni.qti.vendor
 
+# RemovePackages
+ifeq ($(WITH_GMS),true)
+PRODUCT_PACKAGES += \
+    RemovePackages
+endif
+
 # RIL
 PRODUCT_PACKAGES += \
     android.hardware.radio@1.5.vendor \
@@ -438,6 +444,9 @@ $(call inherit-product, hardware/oplus/oplus-fwk/oplus-fwk.mk)
 # Touch
 PRODUCT_PACKAGES += \
     vendor.lineage.touch@1.0-service.oplus
+
+# UDFPS
+TARGET_HAS_UDFPS := true
 
 # Update engine
 PRODUCT_PACKAGES += \

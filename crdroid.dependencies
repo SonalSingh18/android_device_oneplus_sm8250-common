@@ -1,0 +1,26 @@
+[
+  {
+    "remote": "github",
+    "branch": "14.0",
+    "repository": "SonalSingh18/android_hardware_oplus",
+    "target_path": "hardware/oplus"
+  },
+  {
+    "remote": "github",
+    "branch": "14.0",
+    "repository": "SonalSingh18/android_packages_apps_OPlusExtras",
+    "target_path": "packages/apps/OPlusExtras"
+  },
+  {
+    "remote": "github",
+    "branch": "14.0",
+    "repository": "SonalSingh18/android_kernel_oneplus_sm8250",
+    "target_path": "kernel/oneplus/sm8250"
+  },
+  {
+    "remote": "github",
+    "repository": "SonalSingh18/android_vendor_oneplus_sm8250-common",
+    "branch": "lineage-21",
+    "target_path": "vendor/oneplus/sm8250-common"
+  }
+]
