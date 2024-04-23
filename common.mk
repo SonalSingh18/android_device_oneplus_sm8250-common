@@ -298,6 +298,13 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libvndfwk_detect_jni.qti.vendor:64 # Needed by CNE app
 
+# RemovePackages
+ifeq ($(WITH_GMS),true)
+PRODUCT_PACKAGES += \
+    PixelSetupWizardOverlay \
+    RemovePackages
+endif
+
 # Seccomp policy
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/seccomp/mediacodec.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediacodec.policy
@@ -358,6 +365,9 @@ $(call inherit-product, hardware/oplus/oplus-fwk/oplus-fwk.mk)
 # Touch
 PRODUCT_PACKAGES += \
     vendor.lineage.touch@1.0-service.oplus
+
+# UDFPS
+TARGET_HAS_UDFPS := true
 
 # Update engine
 PRODUCT_PACKAGES += \
