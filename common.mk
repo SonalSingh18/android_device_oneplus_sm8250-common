@@ -135,11 +135,6 @@ PRODUCT_COPY_FILES += \
 
 $(call soong_config_set,qtidisplay,target_uses_tp10_ubwc_for_10bit,true)
 
-# Doze
-PRODUCT_PACKAGES += \
-    OplusDoze \
-    OplusDozeResCommon
-
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm-service.clearkey \
@@ -287,7 +282,7 @@ $(call soong_config_set,qtipower,tap_to_wake_node,/proc/touchpanel/double_tap_en
 
 # Sensors
 PRODUCT_PACKAGES += \
-    android.hardware.sensors-service.multihal \
+    android.hardware.sensors-service.oplus-multihal \
     sensors.oplus
 
 PRODUCT_COPY_FILES += \
