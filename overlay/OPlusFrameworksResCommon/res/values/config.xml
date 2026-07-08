@@ -153,4 +153,7 @@
          keyboard vibration will follow config_defaultHapticFeedbackIntensity -->
     <integer name="config_defaultKeyboardVibrationIntensity">3</integer>
 
+    <!-- CPU temperature -->
+    <integer name="config_sysCPUTempMultiplier">1000</integer>
+
 </resources>
