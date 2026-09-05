@@ -254,6 +254,7 @@ persist.sys.cust.lte_config=true
 persist.rcs.supported=1
 
 # Sensors
+persist.sys.assert.panic=false
 persist.vendor.sensors.allow_non_default_discovery=true
 persist.vendor.sensors.sync_request=true
 
