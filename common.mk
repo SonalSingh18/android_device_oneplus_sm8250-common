@@ -201,6 +201,7 @@ PRODUCT_PACKAGES += \
     init.oplus.hw.rc \
     init.oplus.hw.recovery.rc \
     init.oplus.rc \
+    init.oneplus_parts.rc \
     init.oplus.sh \
     init.qcom.early_boot.sh \
     init.qcom.post_boot.sh \
@@ -428,3 +429,6 @@ $(call inherit-product, packages/apps/GameBar/gamebar.mk)
 
 # Inherit from the proprietary files makefile.
 $(call inherit-product, vendor/oneplus/sm8250-common/sm8250-common-vendor.mk)
+
+# Parts
+$(call inherit-product-if-exists, packages/apps/OnePlusParts/parts.mk)

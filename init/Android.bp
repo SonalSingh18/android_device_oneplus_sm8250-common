@@ -39,6 +39,13 @@ prebuilt_etc {
 }
 
 prebuilt_etc {
+    name: "init.oneplus_parts.rc",
+    src: "init.oneplus_parts.rc",
+    sub_dir: "init",
+    device_specific: true,
+}
+
+prebuilt_etc {
     name: "init.qcom.recovery.rc",
     src: "init.qcom.recovery.rc",
     sub_dir: "init",
