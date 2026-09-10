@@ -1,6 +1,12 @@
 # Audio
 af.fast_track_multiplier=1
 
+# Bluetooth
+# LHDCv5 defaults to priority 5002 (above LDAC) but sm8250 cannot offload it
+# and the a2dp offload audio policy declares no AUDIO_FORMAT_LHDC device port,
+# so APM refuses to make the sink available and playback stays on the speaker.
+bluetooth.a2dp.source.lhdcv5_priority.config=-1
+
 # eBPF
 ro.bpf.kver_override=5.10.239
 
