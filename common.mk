@@ -63,7 +63,7 @@ AUDIO_HAL_DIR := hardware/qcom-caf/sm8250/audio
 TARGET_EXCLUDES_AUDIOFX := true
 
 PRODUCT_COPY_FILES += \
-    $(AUDIO_HAL_DIR)/configs/kona/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
+    $(LOCAL_PATH)/audio/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
     $(AUDIO_HAL_DIR)/configs/kona/audio_platform_info.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_platform_info.xml \
     $(AUDIO_HAL_DIR)/configs/kona/audio_tuning_mixer.txt:$(TARGET_COPY_OUT_VENDOR)/etc/audio_tuning_mixer.txt \
     $(LOCAL_PATH)/audio/audio_io_policy.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio_io_policy.conf \
@@ -424,6 +424,12 @@ $(call inherit-product, packages/apps/GameBar/gamebar.mk)
 
 # Inherit from the proprietary files makefile.
 $(call inherit-product, vendor/oneplus/sm8250-common/sm8250-common-vendor.mk)
+
+# Dolby
+TARGET_INCLUDES_OEM_App := true
+TARGET_INCLUDES_DolbyVision := true
+$(call inherit-product, hardware/dolby/dolby.mk)
+
 
 # Parts
 $(call inherit-product-if-exists, packages/apps/OnePlusParts/parts.mk)
