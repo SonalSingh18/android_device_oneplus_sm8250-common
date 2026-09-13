@@ -118,6 +118,7 @@ ro.vendor.bluetooth.wipower=false
 vendor.qcom.bluetooth.soc=hastings
 
 # Camera
+persist.vendor.camera.logInfoMask=false
 vendor.camera.aux.packageexcludelist=org.telegram.messenger,org.thunderdog.challegram,us.zoom.videomeetings
 vendor.camera.algo.jpeghwencode=0
 vendor.camera.aux.packagelist=android,com.oneplus.camera
