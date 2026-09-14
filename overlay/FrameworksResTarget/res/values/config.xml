@@ -72,4 +72,10 @@
      <!-- Whether the device enable the non-standalone (NSA) mode of 5G NR.-->
      <bool name="config_telephony5gNonStandalone">true</bool>
 
+     <!-- DSDS on sm8250 shares one receive chain between both SIM stacks, so a voice call on
+          one SIM tunes the modem away from the other SIM for the whole call and takes it out
+          of service. Force the data-during-voice-call policy on so the preferred data modem
+          follows the call instead of leaving the user with no data at all. -->
+     <bool name="config_dataDuringVoiceCallAlwaysEnabled">true</bool>
+
 </resources>
