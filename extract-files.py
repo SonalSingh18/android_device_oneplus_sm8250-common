@@ -103,6 +103,8 @@ blob_fixups: blob_fixups_user_type = {
         .sig_replace('FD 7B BF A9 FD 03 00 91 00 44 40 F9', '00 00 80 52 C0 03 5F D6 1F 20 03 D5'),
     'product/app/PowerOffAlarm/PowerOffAlarm.apk': blob_fixup()
         .apktool_patch('blob-patches/PowerOffAlarm.patch'),
+    ('odm/etc/libdlbdsservice_v3_6_etc.so', 'odm/etc/libstagefright_soft_ddpdec_etc.so', 'odm/etc/libstagefrightdolby_etc.so', 'odm/lib64/libdlbdsservice_v3_6.so'): blob_fixup()
+        .replace_needed('libstagefright_foundation.so', 'libstagefright_foundation-v33.so'),
     'product/etc/sysconfig/com.android.hotwordenrollment.common.util.xml': blob_fixup()
         .regex_replace('/my_product', '/product'),
     'system/framework/WfdCommon.jar': blob_fixup()
@@ -114,8 +116,6 @@ blob_fixups: blob_fixups_user_type = {
     'vendor/etc/libnfc-nxp.conf': blob_fixup()
         .regex_replace('(NXPLOG_.*_LOGLEVEL)=0x03', '\\1=0x02')
         .regex_replace('NFC_DEBUG_ENABLED=1', 'NFC_DEBUG_ENABLED=0'),
-    'vendor/etc/vintf/manifest/c2_manifest_vendor.xml': blob_fixup()
-        .regex_replace('<instance>software</instance>', '<instance>dolby</instance>\n            <instance>software</instance>'),
     'vendor/etc/msm_irqbalance.conf': blob_fixup()
         .regex_replace('IGNORED_IRQ=27,23,38$', 'IGNORED_IRQ=27,23,38,115,332'),
     'vendor/lib64/hw/com.qti.chi.override.so': blob_fixup()
