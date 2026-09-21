@@ -141,6 +141,9 @@ PRODUCT_COPY_FILES += \
 
 $(call soong_config_set,qtidisplay,target_uses_tp10_ubwc_for_10bit,true)
 
+# Dolby
+$(call inherit-product, hardware/oplus/dolby/dolby.mk)
+
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm-service.clearkey \
@@ -226,6 +229,8 @@ PRODUCT_PACKAGES += \
 
 # Media
 PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/media/media_codecs_vendor_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_vendor_audio.xml \
+    $(LOCAL_PATH)/media/media_codecs_dolby_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_dolby_audio.xml \
     $(LOCAL_PATH)/media/media_codecs_c2.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_c2.xml \
     $(LOCAL_PATH)/media/media_codecs_performance_c2.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance_c2.xml \
     $(LOCAL_PATH)/media/media_codecs_performance_kona_vendor.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance_kona.xml \
@@ -427,12 +432,6 @@ $(call inherit-product, packages/apps/GameBar/gamebar.mk)
 
 # Inherit from the proprietary files makefile.
 $(call inherit-product, vendor/oneplus/sm8250-common/sm8250-common-vendor.mk)
-
-# Dolby
-TARGET_INCLUDES_OEM_App := true
-TARGET_INCLUDES_DolbyVision := true
-$(call inherit-product, hardware/dolby/dolby.mk)
-
 
 # Parts
 $(call inherit-product-if-exists, packages/apps/OnePlusParts/parts.mk)
