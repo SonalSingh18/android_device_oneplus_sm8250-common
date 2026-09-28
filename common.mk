@@ -269,6 +269,7 @@ PRODUCT_PACKAGES += \
     OPlusFrameworksResCommon \
     OPlusSettingsResCommon \
     OPlusSystemUIResCommon \
+    RepairModeOverlay \
     WifiResTarget
 
 
